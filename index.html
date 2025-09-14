@@ -19,7 +19,7 @@
             </a>
         </li>
         
-        <li><a href="/about">Cокращенная ссылка на внутреннюю страницу</a></li>
+        <li><a href="/about">Сокращенная ссылка на внутреннюю страницу</a></li>
         
         <li><a href="/">Сокращенная ссылка на главную страницу</a></li>
         
@@ -44,12 +44,13 @@
         <li><a href="http://example.com/page#about">Ссылка на фрагмент страницы стороннего сайта</a></li>
         
         <li>
+            <p>Cсылки из прямоугольных и круглых областей картинки (HTML-тег map)</p>
             <img src="https://github.com/0196033/s0196033.github.io/blob/main/im.png?raw=true" alt="Cсылки из прямоугольных и круглых областей картинки" usemap="#examplemap" width="300" height="200">
             <map name="examplemap">
                 <area 
                  shape="rect" 
                  coords="10,35,140,155" 
-                 href="https://example1.com/" 
+                 href="https://example.com/" 
                  alt="Прямоугольная область">
                 <area 
                  shape="circle" 
@@ -65,11 +66,10 @@
         
         <li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещён переход поисковикам</a></li>
         
-        <li><a href="https://example.com" rel="noindex">Ссылка, запрещённая для индексикации поисковикам</a></li>
+        <li><a href="https://example.com" rel="noindex">Ссылка, запрещённая для индексации поисковикам</a></li>
         
         <li>
         <p>Нумерованный список ссылок с подписями title</p>
-
             <ol>
                 <li><a href="https://www.kubsu.ru/" title="Официальный сайт КубГУ">Кубанский государственный университет</a></li>
                 <li><a href="https://www.kubsu.ru/ru/university/" title="Информация об университете">Об университете</a></li>
@@ -79,7 +79,6 @@
         
         <li><a href="ftp://user:password@example.com/file.txt"> Ссылка на файл на сервере FTP с авторизацией</a></li>
     </ul>
-
     
     <h1 id="form-section">Форма</h1>
     <form action="/"
@@ -135,7 +134,7 @@
           <option value="PHP">PHP</option>
           <option value="Python">Python</option>
           <option value="Java">Java</option>
-          <option value="Haskel">Haskel</option>
+          <option value="Haskell">Haskell</option>
           <option value="Clojure">Clojure</option>
           <option value="Prolog">Prolog</option>
           <option value="Scala">Scala</option>
@@ -144,17 +143,16 @@
 
       <label>
         Биография:<br />
-        <textarea name="field-name-3">Расскажите о себе</textarea>
+        <textarea name="field-name-3"rows="4" cols="50" placeholder="Расскажите о себе">Расскажите о себе</textarea>
       </label><br />
-
 
       <label><input type="checkbox"
         name="check-1" />
         С контрактом ознакомлен(-а)</label><br />
-
-      
+   
       <input type="submit" value="Сохранить" />
     </form>
 
 </body>
+
 </html>
