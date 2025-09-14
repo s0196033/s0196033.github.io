@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1. Список гиперссылок и форма</title>
+</head>
+<body>
+    <h1>Список гиперссылок</h1>
+    
+    <ul>
+        <li><a href="http://www.kubsu.ru/">Абсолютная гиперссылка на главную страницу сайта kubsu.ru</a></li>
+        
+        <li><a href="https://www.kubsu.ru/">Абсолютная гиперссылка на главную страницу сайта kubsu.ru в протоколе https</a></li>
+        
+        <li>
+            <a href="https://example.com/">
+                <img src="https://github.com/0196033/s0196033.github.io/blob/main/image.jpg?raw=true" alt="Ссылка-изображение" style="width: 400px;" >
+            </a>
+        </li>
+        
+        <li><a href="/about">Cокращенная ссылка на внутреннюю страницу</a></li>
+        
+        <li><a href="/">Сокращенная ссылка на главную страницу</a></li>
+        
+        <li><a href="#form-section">Ссылка на фрагмент текущей страницы (Ссылка на форму) </a></li>
+        
+        <li><a href="https://example.com/page?param1=value1&param2=value2&param3=value3">Ссылка с тремя параметрами в URL</a></li>
+        
+        <li><a href="https://example.com/user?id=12345">Ссылка с параметром id в URL</a></li>
+        
+        <li><a href="chapter.html">Относительная ссылка на страницу в текущем каталоге</a></li>
+        
+        <li><a href="about/chapter.html">Относительная ссылка на страницу в каталоге about</a></li>
+        
+        <li><a href="../index.html">Относительная ссылка на страницу в каталоге уровнем выше</a></li>
+        
+        <li><a href="../../index.html">Относительная ссылка на страницу в каталоге двумя уровнами выше</a></li>
+        
+        <li>
+            <p>Контекстная <a href="https://example.com/">ссылка</a> в тексте абзаца.</p>
+        </li>
+        
+        <li><a href="http://example.com/page#about">Ссылка на фрагмент страницы стороннего сайта</a></li>
+        
+        <li>
+            <img src="https://github.com/0196033/s0196033.github.io/blob/main/im.png?raw=true" alt="Cсылки из прямоугольных и круглых областей картинки" usemap="#examplemap" width="300" height="200">
+            <map name="examplemap">
+                <area 
+                 shape="rect" 
+                 coords="10,35,140,155" 
+                 href="https://example1.com/" 
+                 alt="Прямоугольная область">
+                <area 
+                 shape="circle" 
+                 coords="215,100,60" 
+                 href="https://example2.com/" 
+                 alt="Круглая область">
+            </map>
+        </li>
+        
+        <li><a href="">Ссылка с пустым href</a></li>
+        
+        <li><a>Ссылка без href</a></li>
+        
+        <li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещён переход поисковикам</a></li>
+        
+        <li><a href="https://example.com" rel="noindex">Ссылка, запрещённая для индексикации поисковикам</a></li>
+        
+        <li>
+        <p>Нумерованный список ссылок с подписями title</p>
+
+            <ol>
+                <li><a href="https://www.kubsu.ru/" title="Официальный сайт КубГУ">Кубанский государственный университет</a></li>
+                <li><a href="https://www.kubsu.ru/ru/university/" title="Информация об университете">Об университете</a></li>
+                <li><a href="https://www.kubsu.ru/ru/education/" title="Образовательные программы">Образование</a></li>
+            </ol>
+        </li>
+        
+        <li><a href="ftp://user:password@example.com/file.txt"> Ссылка на файл на сервере FTP с авторизацией</a></li>
+    </ul>
+
+    
+    <h1 id="form-section">Форма</h1>
+    <form action="/"
+      method="POST">
+
+      <label>
+        ФИО:<br />
+        <input name="field-name-1"
+          size="30"
+          placeholder="Введите ваше ФИО" />
+      </label><br />
+
+      <label>
+        Телефон:<br />
+        <input name="field-tel"
+          type="tel"
+          size="30"
+          placeholder="Введите ваш номер телефона" />
+      </label><br />
+
+      <label>
+        Электронная почта e-mail:<br />
+        <input name="field-email"
+          type="email"
+          size="30"
+          placeholder="Введите вашу почту" />
+      </label><br />
+
+      <label>
+        Дата рождения:<br />
+        <input name="field-date"
+          value="2025-01-01"
+          type="date" />
+      </label><br />
+
+      Пол:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-1" value="male" />
+        Мужской</label>
+      <label><input type="radio"
+        name="radio-group-1" value="female" />
+        Женский</label><br />
+
+      <label>
+        Любимый язык программирования:
+        <br />
+        <select name="field-name-2[]"
+          multiple="multiple">
+          <option value="Pascal">Pascal</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="PHP">PHP</option>
+          <option value="Python">Python</option>
+          <option value="Java">Java</option>
+          <option value="Haskel">Haskel</option>
+          <option value="Clojure">Clojure</option>
+          <option value="Prolog">Prolog</option>
+          <option value="Scala">Scala</option>
+        </select>
+      </label><br />
+
+      <label>
+        Биография:<br />
+        <textarea name="field-name-3">Расскажите о себе</textarea>
+      </label><br />
+
+
+      <label><input type="checkbox"
+        name="check-1" />
+        С контрактом ознакомлен(-а)</label><br />
+
+      
+      <input type="submit" value="Сохранить" />
+    </form>
+
+</body>
+</html>
