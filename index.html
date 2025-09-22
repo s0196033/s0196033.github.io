@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задание 1. Список гиперссылок и форма</title>
+    <title>Задание 2. Список гиперссылок, таблица, форма и оформление CSS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Список гиперссылок</h1>
+    <header>
+            <img id="logo_img" src="https://github.com/s0196033/s0196033.github.io/blob/main/log.png?raw=true" alt="Логотип">
+    <nav>
+            <ul class="nav-links">
+                <li><a href="#links">Ссылки</a></li>
+                <li><a href="#table">Таблица</a></li>
+                <li><a href="#form-section">Форма</a></li>
+            </ul>
+    </nav>
+            <div class="site-title">Задание 2. Таблица и оформление</div>
+    </header>
+    <div class="content">
+    <h1 id="links">Список гиперссылок</h1>
     
     <ul>
         <li><a href="http://www.kubsu.ru/">Абсолютная гиперссылка на главную страницу сайта kubsu.ru</a></li>
@@ -81,7 +94,48 @@
         
         <li><a href="ftp://user:password@example.com/file.txt"> Ссылка на файл на сервере FTP с авторизацией</a></li>
     </ul>
-    
+
+    <h1 id="table">Таблица</h1>
+        <table>
+            <tr class="row1">
+                <th>Заголовок колонки 1</th>
+                <th>Заголовок колонки 2</th>
+                <th>Заголовок колонки 3</th>
+                <th>Заголовок колонки 4</th>
+                <th>Заголовок колонки 5</th>
+            </tr>
+            <tr class="row2">
+                <td>Ячейка 1.1</td>
+                <td>Ячейка 1.2</td>
+                <td>Ячейка 1.3</td>
+                <td>Ячейка 1.4</td>
+                <td rowspan="3">Ячейка 1.5, объединённая с ячейкой 2.5 и ячейкой 3.5</td>
+            </tr>
+            <tr class="row1">
+                <td>Ячейка 2.1</td>
+                <td>Ячейка 2.2</td>
+                <td>Ячейка 2.3</td>
+                <td>Ячейка 2.4</td>
+            </tr>
+            <tr class="row2">
+                <td>Ячейка 3.1</td>
+                <td rowspan="2">Ячейка 3.2, объединённая с ячейкой 4.2</td>
+                <td>Ячейка 3.3</td>
+                <td>Ячейка 3.4</td>
+            </tr>
+            <tr class="row1">
+                <td>Ячейка 4.1</td>
+                <td>Ячейка 4.3</td>
+                <td>Ячейка 4.4</td>
+                <td>Ячейка 4.5</td>
+            </tr>
+            <tr class="row2">
+                <td colspan="2">Ячейка 5.1, объединённая с ячейкой 5.2</td>
+                <td>Ячейка 5.3</td>
+                <td colspan="2">Ячейка 5.4, объединённая с ячейкой 5.5</td>
+            </tr>
+        </table>
+        
     <h1 id="form-section">Форма</h1>
     <form action="/"
       method="POST">
@@ -143,8 +197,11 @@
    
       <input type="submit" value="Сохранить">
     </form>
-
+    </div>
+    
+    <footer>
+        <p>© Дядченко Валерия Денисовна</p>
+    </footer>
+    
 </body>
-
 </html>
-
