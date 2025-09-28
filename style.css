@@ -75,6 +75,7 @@
         table {
             border: 2px solid #888888;
             border-collapse: collapse;
+            font-size:14px;
             width: 100%;
             margin: 20px 0;
             max-width: 100%;
@@ -90,7 +91,7 @@
         .table-title {
             background-color: #A8C6D6;
             color: #173F5F;
-            font-size:14px;
+            font-size:16px;
             font-weight: bold;
             text-align: center;
         }
@@ -148,6 +149,19 @@
                 gap: 50px;
 
             }
+              
+            table {
+                font-size:18px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .table-title {
+                font-size:22px;
+            }
+              
             .content {
                 max-width: 800px;
                 margin: 0 auto;
@@ -158,5 +172,6 @@
                 width: 100%;
             }
         }
+
 
 
