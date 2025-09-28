@@ -49,6 +49,18 @@ body {
             padding: 5px 10px;
         }
 
+        .table-section { 
+            order: -1;
+        }
+
+        .link-section {
+            order: 0;
+        }
+
+        .form-section {
+            order: 1;
+        }
+
         .content {
             padding: 10px;
             max-width: 100%;
@@ -65,6 +77,14 @@ body {
             border: 2px solid #888888;
             padding: 8px;
             text-align: left;
+        }
+
+        .table-title {
+            background-color: #A8C6D6;
+            color: #173F5F;
+            font-size:22px;
+            font-weight: bold;
+            text-align: center;
         }
 
         .row1 {
@@ -111,7 +131,18 @@ body {
                 gap: 50px;
 
             }
-
+              
+            .links-section {
+                order: 0;
+            }
+            
+            .table-section {
+                order: 0;
+            }
+            
+            .form-section {
+                order: 0;
+            }
             .content {
                 max-width: 800px;
                 margin: 0 auto;
