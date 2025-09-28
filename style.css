@@ -29,6 +29,7 @@ body {
             padding: 10px;
             width: 100%;
             max-width: 100%;
+            order: 3;
         }
 
         .nav-links {
@@ -143,5 +144,6 @@ body {
                 width: 100%;
             }
         }
+
 
 
