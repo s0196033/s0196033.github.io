@@ -125,7 +125,7 @@
         @media (min-width: 768px) {
             header {
                 flex-direction: row;
-                height: 80px;
+                height: 90px;
                 justify-content: flex-start;
             }
 
@@ -174,7 +174,3 @@
                 width: 100%;
             }
         }
-
-
-
-
