@@ -21,7 +21,7 @@
         }
 
         .site-title {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             text-align: center;
             flex:1;
@@ -78,18 +78,19 @@
             width: 100%;
             margin: 20px 0;
             max-width: 100%;
+            table-layout: fixed;
         }
 
         th, td {
             border: 2px solid #888888;
-            padding: 8px;
+            padding: 5px;
             text-align: center;
         }
 
         .table-title {
             background-color: #A8C6D6;
             color: #173F5F;
-            font-size:22px;
+            font-size:14px;
             font-weight: bold;
             text-align: center;
         }
@@ -110,7 +111,14 @@
             width:100%;
             box-sizing: border-box;
         }
-
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        input, select, textarea {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
         @media (min-width: 768px) {
             header {
                 flex-direction: row;
@@ -150,4 +158,5 @@
                 width: 100%;
             }
         }
+
 
