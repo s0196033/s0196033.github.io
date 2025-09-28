@@ -9,7 +9,6 @@ body {
             background-color: #A8C6D6;
             padding: 10px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             gap: 10px;
             flex-wrap:wrap;
@@ -144,4 +143,5 @@ body {
                 width: 100%;
             }
         }
+
 
