@@ -79,7 +79,6 @@
             width: 100%;
             margin: 20px 0;
             max-width: 100%;
-            table-layout: fixed;
             word-wrap: break-word;
             hyphens: auto;
             -webkit-hyphens: auto;
@@ -183,3 +182,4 @@
                 width: 100%;
             }
         }
+
