@@ -54,3 +54,27 @@
             text-align: center;
             word-wrap: break-word;
         }
+        .link-section {
+            order: 2;
+        }
+        
+        .table-section {
+            order: 1;
+        }
+        
+        .form-section {
+            order: 3;
+        }
+        @media (min-width: 768px) {
+            .link-section {
+                order: 1;
+            }
+            
+            .table-section {
+                order: 2;
+            }
+            
+            .form-section {
+                order: 3;
+            }
+        }
