@@ -183,3 +183,53 @@ body {
                 width: 100%;
             }
         }
+
+<style>
+        body {
+            color: #173F5F;
+            background-color: #FFFFFF;
+        }
+
+        header {
+            color: #173F5F;
+            background-color: #A8C6D6;
+        }
+
+
+        nav {
+            background-color: #D0A9A9;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .table-title {
+            background-color: #A8C6D6;
+            color: #173F5F;
+            
+        }
+
+        .row1 {
+            background-color: #E5EACF;
+        }
+
+        .row2 {
+            background-color: #F7F7F7;
+        }
+
+        footer {
+            color: #173F5F;
+            background-color: #A8C6D6;
+        }
+
+        table {
+            border: 2px solid #888888;
+        }
+
+        th, td {
+            border: 2px solid #888888;
+            padding: px;
+        }
+    </style>
