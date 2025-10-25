@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор стоимости маникюра</title>
+</head>
+<body>
+    <h1>Калькулятор стоимости маникюра</h1>
+    
+    <form>
+        <div>
+            <label>Выберите услугу:</label><br>
+            <select name="products">
+                <option value="1500">Укрепление ногтевой пластины - 1500 руб.</option>
+                <option value="2000">Наращивание длины 1-3 - 2000 руб.</option>
+                <option value="2500">Наращивание длины 4-7 - 2500 руб.</option>
+                <option value="3000">Наращивание экстра длины - 3000 руб.</option>
+            </select>
+        </div>
+        
+        <div>
+            <label>Количество:</label><br>
+            <input name="quantity" type="text" placeholder="Введите количество">
+        </div>
+        
+        <br>
+        <button id="button1" type="button">Рассчитать стоимость</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <h3>Прайс-лист услуг:</h3>
+    <ul>
+        <li>Укрепление ногтевой пластины - 1500 руб.</li>
+        <li>Наращивание длины 1-3 - 2000 руб.</li>
+        <li>Наращивание длины 4-7 - 2500 руб.</li>
+        <li>Наращивание экстра длины - 3000 руб.</li>
+    </ul>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
