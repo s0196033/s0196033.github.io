@@ -1,8 +1,8 @@
 
 const basePrices = {
-    "basic": 500,
-    "premium": 1000,
-    "custom": 800
+    "basic": 1000,
+    "premium": 2000,
+    "custom": 300
 };
 
 const optionMultipliers = {
@@ -11,7 +11,7 @@ const optionMultipliers = {
     "professional": 2.0
 };
 
-const propertyPrice = 200;
+const propertyPrice = 500;
 
 function calculate() {
     let quantityInput = document.getElementById("quantity");
