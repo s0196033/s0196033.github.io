@@ -12,38 +12,38 @@
         <div>
             <label for="quantity">Количество:</label><br>
             <input type="text" id="quantity" name="quantity" placeholder="Введите количество" value="1">
-            <div id="error" style="color: red; display: none;"></div> <!-- Исправлено: Error -> error -->
+            <div id="error" style="color: red; display: none;"></div> 
         </div>
         
         <div>
             <p>Тип услуги:</p>
             <div>
                 <input type="radio" id="type1" name="serviceType" value="basic" checked>
-                <label for="type1">Базовая услуга - 500 руб.</label>
+                <label for="type1">Базовое покрытие - 1000 руб.</label>
             </div>
             <div>
                 <input type="radio" id="type2" name="serviceType" value="premium">
-                <label for="type2">Премиум услуга - 1000 руб.</label>
+                <label for="type2">Наращивание - 2000 руб.</label>
             </div>
             <div>
                 <input type="radio" id="type3" name="serviceType" value="custom">
-                <label for="type3">Кастомная услуга - 800 руб.</label>
+                <label for="type3">Нестандартная форма - 3000 руб.</label>
             </div>
         </div>
         
         <div id="optionsGroup" style="display: none">
             <label for="options">Опции услуги:</label><br>
             <select id="options" name="options">
-                <option value="standard">Стандартная опция (+0%)</option>
-                <option value="advanced">Продвинутая опция (+50%)</option>
-                <option value="professional">Профессиональная опция (+100%)</option>
+                <option value="standard">Длина от 1-3 (+0%)</option>
+                <option value="advanced">Длина от 4-7 (+50%)</option>
+                <option value="professional">Длина от 8-10 (+100%)</option>
             </select>
         </div>
         
         <div id="propertyGroup" style="display: none">
             <div>
                 <input type="checkbox" id="property" name="property">
-                <label for="property">Включить дополнительное свойство (+200 руб.)</label>
+                <label for="property">Аквариумный дизайн (+500 руб.)</label>
             </div>
         </div>
         
