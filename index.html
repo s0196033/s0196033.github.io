@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости услуги</title>
+</head>
+<body>
+    <h1>Калькулятор стоимости услуги</h1>
+    
+    <form id="calculatorForm">
+        <div>
+            <label for="quantity">Количество:</label><br>
+            <input type="text" id="quantity" name="quantity" placeholder="Введите количество" value="1">
+            <div id="error" style="color: red; display: none;"></div> <!-- Исправлено: Error -> error -->
+        </div>
+        
+        <div>
+            <p>Тип услуги:</p>
+            <div>
+                <input type="radio" id="type1" name="serviceType" value="basic" checked>
+                <label for="type1">Базовая услуга - 500 руб.</label>
+            </div>
+            <div>
+                <input type="radio" id="type2" name="serviceType" value="premium">
+                <label for="type2">Премиум услуга - 1000 руб.</label>
+            </div>
+            <div>
+                <input type="radio" id="type3" name="serviceType" value="custom">
+                <label for="type3">Кастомная услуга - 800 руб.</label>
+            </div>
+        </div>
+        
+        <div id="optionsGroup" style="display: none">
+            <label for="options">Опции услуги:</label><br>
+            <select id="options" name="options">
+                <option value="standard">Стандартная опция (+0%)</option>
+                <option value="advanced">Продвинутая опция (+50%)</option>
+                <option value="professional">Профессиональная опция (+100%)</option>
+            </select>
+        </div>
+        
+        <div id="propertyGroup" style="display: none">
+            <div>
+                <input type="checkbox" id="property" name="property">
+                <label for="property">Включить дополнительное свойство (+200 руб.)</label>
+            </div>
+        </div>
+        
+        <br>
+        <button id="calculateButton" type="button">Рассчитать стоимость</button>
+    </form>
+    
+    <div id="result"></div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
