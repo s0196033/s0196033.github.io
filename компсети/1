@@ -1,0 +1,85 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+string getZodiacSign(int day, int month) {
+    if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Овен";
+    if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Телец";
+    if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Близнецы";
+    if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Рак";
+    if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Лев";
+    if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Дева";
+    if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Весы";
+    if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return "Скорпион";
+    if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return "Стрелец";
+    if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Козерог";
+    if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Водолей";
+    if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Рыбы";
+    return "Неизвестно";
+}
+
+string getEasternZodiac(int year) {
+    string signs[] = { "Обезьяна", "Петух", "Собака", "Свинья", "Крыса", "Бык", "Тигр", "Кролик", "Дракон", "Змея", "Лошадь", "Коза" };
+    return signs[year % 12];
+}
+
+int main() {
+    system("chcp 1251 > nul");
+
+    string surname;
+
+    while (true) {
+        cout << "Введите фамилию (или 0 для выхода): ";
+        cin >> surname;
+
+        if (surname == "0") break;
+
+        string dateStr;
+        cout << "Введите дату рождения в формате ДД.ММ.ГГГГ: ";
+        cin >> dateStr;
+
+        string dayStr = dateStr.substr(0, 2);
+        string monthStr = dateStr.substr(3, 2);
+        string yearStr = dateStr.substr(6, 4);
+
+        int day = stoi(dayStr);
+        int month = stoi(monthStr);
+        int year = stoi(yearStr);
+
+        ofstream clientFile("Клиент.txt", ios::app);
+        clientFile << surname << " " << dateStr << endl;
+        clientFile.close();
+
+        ifstream readFile("Клиент.txt");
+        string lastLine, line;
+        while (getline(readFile, line)) {
+            lastLine = line;
+        }
+        readFile.close();
+
+        size_t spacePos = lastLine.find(' ');
+        string lastSurname = lastLine.substr(0, spacePos);
+        string lastDateStr = lastLine.substr(spacePos + 1);
+
+        string lastDayStr = lastDateStr.substr(0, 2);
+        string lastMonthStr = lastDateStr.substr(3, 2);
+        string lastYearStr = lastDateStr.substr(6, 4);
+
+        int lastDay = stoi(lastDayStr);
+        int lastMonth = stoi(lastMonthStr);
+        int lastYear = stoi(lastYearStr);
+
+        string zodiac = getZodiacSign(lastDay, lastMonth);
+        string easternZodiac = getEasternZodiac(lastYear);
+
+        ofstream answerFile("Ответ.txt", ios::app);
+        answerFile <<"\nФамилия: "<< lastSurname << " " <<"\nЗнак зодиака: "<< zodiac << " " <<"\nЗнак по восточному календарю: "<< easternZodiac << endl;
+        answerFile.close();
+
+        cout << "\n Новая запись:" << endl;
+    }
+
+    cout << "Программа завершена." << endl;
+    return 0;
+}
