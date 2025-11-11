@@ -40,13 +40,13 @@ function calculate() {
     let quantity = parseInt(q.value);
     let total = price * quantity;
 
-    if (selectedType === "premium") {
+    if (selectedType === "nar") {
         let optionsSelect = document.getElementById("options");
         let optionMultiplier = optionMultipliers[optionsSelect.value];
         total *= optionMultiplier;
     }
 
-    if (selectedType === "custom") {
+    if (selectedType === "nes") {
         let propertyCheckbox = document.getElementById("property");
         if (propertyCheckbox.checked) {
             total += propertyPrice * quantity;
