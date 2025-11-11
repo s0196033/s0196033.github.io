@@ -47,7 +47,7 @@ function calculate() {
     }
 
     if (selectedType === "nes") {
-        let propertyCheckbox = document.getElementById("property");
+        let propertyCheckbox = document.getElementById("aquarium");
         if (propertyCheckbox.checked) {
             total += propertyPrice * quantity;
         }
@@ -59,8 +59,8 @@ function calculate() {
 
 function updateFormVisibility() {
     let s = document.getElementsByName("service");
-    let optionsGroup = document.getElementById("optionsGroup");
-    let propertyGroup = document.getElementById("propertyGroup");
+    let op = document.getElementById("op");
+    let aq = document.getElementById("aqua");
 
     let selectedType = "";
     for (let radio of s) {
@@ -70,21 +70,21 @@ function updateFormVisibility() {
         }
     }
 
-    document.getElementById("options").value = "standard";
-    document.getElementById("property").checked = false;
+    document.getElementById("options").value = "d1";
+    document.getElementById("aquarium").checked = false;
 
     switch(selectedType) {
-        case 'basic':
-            optionsGroup.style.display = "none";
-            propertyGroup.style.display = "none";
+        case 'bas':
+            op.style.display = "none";
+            aq.style.display = "none";
             break;
-        case 'premium':
-            optionsGroup.style.display = "block";
-            propertyGroup.style.display = "none";
+        case 'nar':
+            op.style.display = "block";
+            aq.style.display = "none";
             break;
-        case 'custom':
-            optionsGroup.style.display = "none";
-            propertyGroup.style.display = "block";
+        case 'nes':
+            op.style.display = "none";
+            aq.style.display = "block";
             break;
     }
 }
