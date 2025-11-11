@@ -1,4 +1,3 @@
-
 const basePrices = {
     "basic": 1000,
     "premium": 2000,
