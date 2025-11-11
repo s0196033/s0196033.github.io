@@ -1,10 +1,10 @@
-const basePrices = {
+const cost = {
     "bas": 1000,
     "nar": 2000,
     "nes": 3000
 };
 
-const optionMultipliers = {
+const coef = {
     "d1": 1.0,
     "d2": 1.5,
     "d3": 2.0
@@ -28,25 +28,25 @@ function calculate() {
         err.style.display = "none";
     }
 
-    let selectedType = "";
+    let sel = "";
     for (let radio of s) {
         if (radio.checked) {
-            selectedType = radio.value;
+            sel = radio.value;
             break;
         }
     }
 
-    let price = basePrices[selectedType];
+    let price = cost[sel];
     let quantity = parseInt(q.value);
     let total = price * quantity;
 
-    if (selectedType === "nar") {
-        let optionsSelect = document.getElementById("options");
-        let optionMultiplier = optionMultipliers[optionsSelect.value];
-        total *= optionMultiplier;
+    if (sel === "nar") {
+        let s1 = document.getElementById("options");
+        let k = coef[s1.value];
+        total *= k;
     }
 
-    if (selectedType === "nes") {
+    if (sel === "nes") {
         let a1 = document.getElementById("aquarium");
         if (a1.checked) {
             total += aquarium * quantity;
@@ -62,10 +62,10 @@ function update() {
     let op = document.getElementById("op");
     let aq = document.getElementById("aqua");
 
-    let selectedType = "";
+    let sel = "";
     for (let radio of s) {
         if (radio.checked) {
-            selectedType = radio.value;
+            sel = radio.value;
             break;
         }
     }
@@ -73,7 +73,7 @@ function update() {
     document.getElementById("options").value = "d1";
     document.getElementById("aquarium").checked = false;
 
-    switch(selectedType) {
+    switch(sel) {
         case 'bas':
             op.style.display = "none";
             aq.style.display = "none";
