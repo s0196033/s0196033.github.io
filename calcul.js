@@ -1,16 +1,16 @@
 const basePrices = {
-    "basic": 1000,
-    "premium": 2000,
-    "custom": 3000
+    "bas": 1000,
+    "nar": 2000,
+    "nes": 3000
 };
 
 const optionMultipliers = {
-    "standard": 1.0,
-    "advanced": 1.5,
-    "professional": 2.0
+    "d1": 1.0,
+    "d2": 1.5,
+    "d3": 2.0
 };
 
-const propertyPrice = 500;
+const aquarium = 500;
 
 function calculate() {
     let quantityInput = document.getElementById("quantity");
