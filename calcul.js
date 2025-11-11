@@ -13,13 +13,13 @@ const optionMultipliers = {
 const aquarium = 500;
 
 function calculate() {
-    let quantityInput = document.getElementById("quantity");
-    let serviceTypeRadios = document.getElementsByName("serviceType");
+    let q = document.getElementById("quantity");
+    let s = document.getElementsByName("service");
     let resultDiv = document.getElementById("result");
     let errorDiv = document.getElementById("error"); 
 
     let regex = /^\d+$/;
-    if (quantityInput.value === "" || !regex.test(quantityInput.value) || parseInt(quantityInput.value) <= 0) {
+    if (q.value === "" || !regex.test(q.value) || parseInt(q.value) <= 0) {
         errorDiv.textContent = "Введите корректное количество!";
         errorDiv.style.display = "block";
         resultDiv.innerHTML = "";
@@ -29,7 +29,7 @@ function calculate() {
     }
 
     let selectedType = "";
-    for (let radio of serviceTypeRadios) {
+    for (let radio of s) {
         if (radio.checked) {
             selectedType = radio.value;
             break;
@@ -37,7 +37,7 @@ function calculate() {
     }
 
     let price = basePrices[selectedType];
-    let quantity = parseInt(quantityInput.value);
+    let quantity = parseInt(q.value);
     let total = price * quantity;
 
     if (selectedType === "premium") {
@@ -58,12 +58,12 @@ function calculate() {
 }
 
 function updateFormVisibility() {
-    let serviceTypeRadios = document.getElementsByName("serviceType");
+    let s = document.getElementsByName("service");
     let optionsGroup = document.getElementById("optionsGroup");
     let propertyGroup = document.getElementById("propertyGroup");
 
     let selectedType = "";
-    for (let radio of serviceTypeRadios) {
+    for (let radio of s) {
         if (radio.checked) {
             selectedType = radio.value;
             break;
@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let calculateButton = document.getElementById("calculateButton");
     calculateButton.addEventListener("click", calculate);
 
-    let serviceTypeRadios = document.getElementsByName("serviceType");
-    for (let radio of serviceTypeRadios) {
+    let s = document.getElementsByName("service");
+    for (let radio of s) {
         radio.addEventListener("change", function() {
             updateFormVisibility();
         });
