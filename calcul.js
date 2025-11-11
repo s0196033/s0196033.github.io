@@ -15,17 +15,17 @@ const aquarium = 500;
 function calculate() {
     let q = document.getElementById("quantity");
     let s = document.getElementsByName("service");
-    let resultDiv = document.getElementById("result");
-    let errorDiv = document.getElementById("error"); 
+    let r = document.getElementById("result");
+    let err = document.getElementById("error"); 
 
     let regex = /^\d+$/;
     if (q.value === "" || !regex.test(q.value) || parseInt(q.value) <= 0) {
-        errorDiv.textContent = "Введите корректное количество!";
-        errorDiv.style.display = "block";
-        resultDiv.innerHTML = "";
+        err.textContent = "Введите корректное количество!";
+        err.style.display = "block";
+        r.innerHTML = "";
         return false;
     } else {
-        errorDiv.style.display = "none";
+        err.style.display = "none";
     }
 
     let selectedType = "";
@@ -53,7 +53,7 @@ function calculate() {
         }
     }
 
-    resultDiv.innerHTML = "Стоимость заказа: " + Math.round(total) + " руб.";
+    r.innerHTML = "Стоимость заказа: " + Math.round(total) + " руб.";
     return false;
 }
 
