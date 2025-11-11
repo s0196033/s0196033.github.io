@@ -47,9 +47,9 @@ function calculate() {
     }
 
     if (selectedType === "nes") {
-        let propertyCheckbox = document.getElementById("aquarium");
-        if (propertyCheckbox.checked) {
-            total += propertyPrice * quantity;
+        let a1 = document.getElementById("aquarium");
+        if (a1.checked) {
+            total += aquarium * quantity;
         }
     }
 
