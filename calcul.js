@@ -1,7 +1,7 @@
 const basePrices = {
     "basic": 1000,
     "premium": 2000,
-    "custom": 300
+    "custom": 3000
 };
 
 const optionMultipliers = {
