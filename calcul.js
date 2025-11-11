@@ -16,7 +16,7 @@ function calculate() {
     let quantityInput = document.getElementById("quantity");
     let serviceTypeRadios = document.getElementsByName("serviceType");
     let resultDiv = document.getElementById("result");
-    let errorDiv = document.getElementById("error"); // Исправлено: Error -> error
+    let errorDiv = document.getElementById("error"); 
 
     let regex = /^\d+$/;
     if (quantityInput.value === "" || !regex.test(quantityInput.value) || parseInt(quantityInput.value) <= 0) {
