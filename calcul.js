@@ -57,7 +57,7 @@ function calculate() {
     return false;
 }
 
-function updateFormVisibility() {
+function update() {
     let s = document.getElementsByName("service");
     let op = document.getElementById("op");
     let aq = document.getElementById("aqua");
@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let s = document.getElementsByName("service");
     for (let radio of s) {
         radio.addEventListener("change", function() {
-            updateFormVisibility();
+            update();
         });
     }
 
-    updateFormVisibility();
+    update();
 });
