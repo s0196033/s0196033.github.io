@@ -12,6 +12,13 @@ const coef = {
 
 const aquarium = 500;
 
+function clearResult() {
+    let r = document.getElementById("result");
+    if (r) {
+        r.innerHTML = "";
+    }
+}
+
 function calculate() {
     let q = document.getElementById("quantity");
     let s = document.getElementsByName("service");
@@ -87,6 +94,7 @@ function update() {
             aq.style.display = "block";
             break;
     }
+    clearResult();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
