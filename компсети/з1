@@ -1,0 +1,153 @@
+#include <iostream>
+#include <fstream>
+#include <windows.h>
+#include <string>
+using namespace std;
+
+struct Person {
+    string name;
+    int height;
+    int weight;
+};
+
+int main() {
+    system("chcp 1251 > nul");
+
+    const char* nameR = "REQUEST.txt";
+    const char* nameA = "ANSWER.txt";
+
+    ofstream clearR(nameR, ios::trunc);
+    ofstream clearA(nameA, ios::trunc);
+    clearR.close();
+    clearA.close();
+
+    cout << "Сервер запущен. Файлы: " << nameR << " и " << nameA << endl;
+
+    int processedCount = 0;
+
+    while (true) {
+        ifstream fR(nameR);
+        if (!fR.is_open()) {
+            Sleep(1000);
+            continue;
+        }
+
+        string line;
+        int currentLine = 0;
+
+        while (getline(fR, line)) {
+            currentLine++;
+
+            if (currentLine <= processedCount) {
+                continue;
+            }
+
+            Person client;
+            size_t pos1 = line.find(' ');
+            size_t pos2 = line.find(' ', pos1 + 1);
+
+            if (pos1 != string::npos && pos2 != string::npos) {
+                client.name = line.substr(0, pos1);
+                client.height = stoi(line.substr(pos1 + 1, pos2 - pos1 - 1));
+                client.weight = stoi(line.substr(pos2 + 1));
+
+                double height_m = client.height / 100.0;
+                double imt = client.weight / (height_m * height_m);
+                string result;
+
+                if (imt < 18.5) result = "Недостаток веса";
+                else if (imt < 25) result = "Норма веса";
+                else result = "Избыток веса";
+
+                ofstream fA(nameA, ios::app);
+                if (fA.is_open()) {
+                    fA << client.name <<" "<<result << endl;
+                    fA.close();
+                }
+
+                cout << "Обработан запрос #" << currentLine << ": " << client.name
+                    << " (рост: " << client.height << ", вес: " << client.weight
+                    << "), ИМТ: " << imt << ", ответ: " << result << endl;
+
+                processedCount = currentLine;
+            }
+        }
+
+        fR.close();
+        Sleep(1000);
+    }
+    return 0;
+}
+
+
+#include <iostream>
+#include <fstream>
+#include <windows.h>
+#include <string>
+using namespace std;
+
+int main() {
+    system("chcp 1251 > nul");
+
+    const char* nameR = "REQUEST.txt";
+    const char* nameA = "ANSWER.txt";
+
+    cout << "Клиент запущен. Файлы в текущей директории." << endl;
+
+    while (true) {
+        string name;
+        int height, weight;
+
+        cout << "\nВведите данные (Фамилия Рост Вес): ";
+        cin >> name;
+
+        if (name == "0") break;
+
+        cin >> height >> weight;
+
+        ofstream fR(nameR, ios::app);
+        if (!fR.is_open()) {
+            cout << "Ошибка открытия файла запросов!" << endl;
+            continue;
+        }
+        fR << name << " " << height << " " << weight << endl;
+        fR.close();
+
+        cout << "Запрос отправлен: " << name << " " << height << " " << weight << endl;
+        cout << "Ожидание ответа от сервера..." << endl;
+
+        bool gotAnswer = false;
+        int attempts = 0;
+
+        while (attempts < 100 && !gotAnswer) {
+            ifstream fA(nameA);
+            if (fA.is_open()) {
+                string line;
+                string lastAnswer = "";
+
+                while (getline(fA, line)) {
+                    if (!line.empty()) {
+                        lastAnswer = line;
+                    }
+                }
+                fA.close();
+
+                if (!lastAnswer.empty() && lastAnswer.find(name) != string::npos) {
+                    cout << "Результат: " << lastAnswer << endl;
+                    gotAnswer = true;
+                    break;
+                }
+            }
+
+            Sleep(100);
+            attempts++;
+        }
+
+        if (!gotAnswer) {
+            cout << "Ошибка: не получен ответ от сервера" << endl;
+        }
+    }
+
+    cout << "Клиент завершил работу." << endl;
+    return 0;
+}
