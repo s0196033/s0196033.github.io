@@ -71,7 +71,6 @@ function update() {
     }
 
     document.getElementById("options").value = "d1";
-    document.getElementById("aquarium").checked = false;
 
     switch(sel) {
         case 'bas':
