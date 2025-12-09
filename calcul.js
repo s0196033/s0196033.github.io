@@ -87,18 +87,29 @@ function update() {
             aq.style.display = "block";
             break;
     }
+    calculate();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    let calculateButton = document.getElementById("calculateButton");
-    calculateButton.addEventListener("click", calculate);
+function newdata() {
+    let qnew = document.getElementById("quantity");
+    qnew.addEventListener("input", calculate);
+    qnew.addEventListener("change", calculate);
 
-    let s = document.getElementsByName("service");
-    for (let radio of s) {
+    let snew = document.getElementsByName("service");
+    for (let radio of snew) {
         radio.addEventListener("change", function() {
             update();
         });
     }
 
+    let onew = document.getElementById("options");
+    onew.addEventListener("change", calculate);
+
+    let aqnew = document.getElementById("aquarium");
+    aqnew.addEventListener("change", calculate);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    newdata();
     update();
 });
