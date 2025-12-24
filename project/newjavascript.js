@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function (){
         }
      document.querySelector('form').addEventListener('input', saveFormData);
 
-    // отправка
     const form = document.getElementById('comment');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function (){
 
         const formData = getFormData();
 
-        fetch('', {
+        fetch('https://formcarry.com/s/Z22PtXKUNlW', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -88,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function (){
                 .then(response => response.json())
                 .then(data => {
                     if (data.code === 200) {
-                        alert('Сообщение отправлено!');
+                        alert('Заявка отправлена!');
                         localStorage.removeItem('formData');
 
                         document.getElementById('name').value = '';
