@@ -65,13 +65,7 @@
     select:focus {
         color: #373B3E;
     }
-.linksong a{
-    text-decoration: none;
-    color: #45818E;
-}
-.linkInf p{
-    color: #BEC8D1;
-}
+
 .linkInf{
     color: #BEC8D1;
 }
