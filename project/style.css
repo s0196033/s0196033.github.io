@@ -65,9 +65,15 @@
     select:focus {
         color: #373B3E;
     }
-
+.linksong a{
+    text-decoration: none;
+    color: #97979A;
+}
+.linkInf p{
+    color: #BEC8D1;
+}
 .linkInf{
-    color: #422B21
+    color: #422B21;
 }
 .info{
     font-size: 15pt;
