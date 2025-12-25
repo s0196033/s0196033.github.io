@@ -11,7 +11,7 @@
 }
 .MFMG{
     font-family: 'Rubik', sans-serif;
-    color: #E12885;
+    color: #691D22;
 }
     .video-header {
       position: relative;
@@ -51,7 +51,7 @@
     .nav-mob{
         border-style: solid;
         border-radius: 5px;
-        border-color: #47DFD3;
+        border-color: #97979A;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -59,7 +59,7 @@
         max-width: 80%;
     }
     select{
-        color: #45818E;
+        color: #97979A;
         font-weight: 700;
     }
     select:focus {
@@ -67,7 +67,7 @@
     }
 
 .linkInf{
-    color: #BEC8D1;
+    color: #422B21
 }
 .info{
     font-size: 15pt;
@@ -96,12 +96,12 @@
 }
 .slick-prev:before, 
 .slick-next:before {
-    color: #47DFD3;
+    color: #97979A;
     font-size: 25px;
 }
 footer{
     margin-top: 50px;
-    background-color: #7ACBDC;
+    background-color: #97979A;
     height: 100vh;
     display: flex;
     flex-direction: column; 
@@ -125,7 +125,7 @@ footer .contw{
 .button{
     width: 80%;
     border: none;
-    background-color: #E12885;
+    background-color: #691D22;
     color: white;
 }
 .formimg{
